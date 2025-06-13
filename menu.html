@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Menu - Golden Bean Café</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Noto+Kufi+Arabic:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./src/style/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <div class="navbar-controls d-flex align-items-center">
+                <button id="theme-toggle" class="theme-toggle d-flex align-items-center me-3">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button id="lang-toggle" class="lang-toggle">
+                    العربية
+                </button>
+            </div>
+            
+            <div class="navbar-brand-center">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img id="navbar-logo" class="navbar-logo me-2" alt="Logo">
+                    <span id="navbar-brand-text"></span>
+                </a>
+            </div>
+            
+            <div class="navbar-spacer"></div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero Section -->
+    <section class="menu-hero">
+        <div class="menu-hero-content">
+            <h1 id="menu-hero-title"></h1>
+            <p id="menu-hero-subtitle"></p>
+            <a href="index.html" class="back-to-home-btn">
+                <i class="fas fa-arrow-left me-2"></i>
+                <span id="back-to-home-text"></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Menu Grid Section -->
+    <section class="section menu-grid">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Hot Drinks Card -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="menu-card" onclick="toggleMenuCard('hot-drinks')">
+                        <div class="menu-card-header" id="hot-drinks-header">
+                            <div class="menu-card-icon">
+                                <i class="fas fa-mug-hot"></i>
+                            </div>
+                            <h3 id="hot-drinks-title" class="menu-card-title"></h3>
+                            <div class="menu-card-arrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="menu-card-content" id="hot-drinks-content">
+                            <div id="hot-drinks-items" class="menu-items-grid"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frappe Card -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="menu-card" onclick="toggleMenuCard('frappe')">
+                        <div class="menu-card-header" id="frappe-header">
+                            <div class="menu-card-icon">
+                                <i class="fas fa-glass-whiskey"></i>
+                            </div>
+                            <h3 id="frappe-title" class="menu-card-title"></h3>
+                            <div class="menu-card-arrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="menu-card-content" id="frappe-content">
+                            <div id="frappe-items" class="menu-items-grid"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juices Card -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="menu-card" onclick="toggleMenuCard('juices')">
+                        <div class="menu-card-header" id="juices-header">
+                            <div class="menu-card-icon">
+                                <i class="fas fa-lemon"></i>
+                            </div>
+                            <h3 id="juices-title" class="menu-card-title"></h3>
+                            <div class="menu-card-arrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="menu-card-content" id="juices-content">
+                            <div id="juices-items" class="menu-items-grid"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milkshake Card -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="menu-card" onclick="toggleMenuCard('milkshake')">
+                        <div class="menu-card-header" id="milkshake-header">
+                            <div class="menu-card-icon">
+                                <i class="fas fa-ice-cream"></i>
+                            </div>
+                            <h3 id="milkshake-title" class="menu-card-title"></h3>
+                            <div class="menu-card-arrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="menu-card-content" id="milkshake-content">
+                            <div id="milkshake-items" class="menu-items-grid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+        <span id="back-to-top-text"></span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p id="footer-text"></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="./src/js/config.js"></script>
+    <script src="./src/js/menu.js"></script>
+</body>
+</html>
